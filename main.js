@@ -6,4 +6,4 @@ let fetchItems = function(items) {
 }
 
 fetch('/list.json')
-  .then((response) => fetchItems(response.json()));
+  .then((response) => response.json().then((data) => fetchItems(data)));
